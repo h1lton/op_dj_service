@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = config('DEBUG')
+DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -102,3 +102,5 @@ LOGGING = {
         }
     }
 }
+
+CELERY_BROKER_URL = 'redis://redis:6379/0'
